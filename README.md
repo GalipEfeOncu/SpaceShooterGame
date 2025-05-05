@@ -18,8 +18,11 @@ Space Shooter Game is a 2.5D space-themed shooter game built with Unity. The pla
 ## How to Play
 
 ### Download
-You can download the built version of the game here:  
-**Download Space Shooter Game**
+You can download the built version of the game here:
+
+- **Windows**: [Download](https://drive.google.com/file/d/1jDoh5UxkL6rh7dfKbWnyGiZUIYRcM3de/view?usp=sharing)
+- **Linux**: [Download](https://drive.google.com/file/d/1rkerq04vX1JuKjjuozr7XJGQzgJcmqOv/view?usp=sharing)
+- **Mac**: [Download](https://drive.google.com/file/d/1FybdtVulgionEODvZwuTJlyKRlkULMs3/view?usp=sharing)
 
 ### Main Menu:
 - Start the game from the **StartingScene** and navigate to the gameplay scene (**SampleScene**).
