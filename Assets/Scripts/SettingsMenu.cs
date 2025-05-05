@@ -1,6 +1,7 @@
 ﻿using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class SettingsMenu : MonoBehaviour
@@ -20,6 +21,10 @@ public class SettingsMenu : MonoBehaviour
 
     [Header("UI References")]
     [SerializeField] private GameObject settings;
+
+    [Header("For Settings Menu")]
+    [SerializeField] private GameObject settingsMenu;
+    [SerializeField] private GameObject welcomeMenu;
 
 
     private void Start()
@@ -48,16 +53,16 @@ public class SettingsMenu : MonoBehaviour
     private void Update()
     {
         // Toggle settings menu when Escape key is pressed
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && SceneManager.GetActiveScene().name == "SampleScene")
         {
-            if (!settings.gameObject.activeSelf)
+            if (!settings.activeSelf)
             {
-                settings.gameObject.SetActive(true);
+                settings.SetActive(true);
                 Time.timeScale = 0f;
             }
             else
             {
-                settings.gameObject.SetActive(false);
+                settings.SetActive(false);
                 Time.timeScale = 1f;
             }
         }
@@ -89,5 +94,17 @@ public class SettingsMenu : MonoBehaviour
         PlayerPrefs.SetFloat("MusicPrefs", musicSlider.value);
         PlayerPrefs.SetFloat("SFXPrefs", SFXSlider.value);
         PlayerPrefs.Save(); // Immediately write to disk
+    }
+
+    public void SettingsMenuOpener()
+    {
+        settingsMenu.SetActive(true);
+        welcomeMenu.SetActive(false);
+    }
+
+    public void SettingsMenuCloser()
+    {
+        settingsMenu.SetActive(false);
+        welcomeMenu.SetActive(true);
     }
 }

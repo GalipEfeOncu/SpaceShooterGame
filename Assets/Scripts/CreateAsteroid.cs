@@ -77,10 +77,10 @@ public class CreateAsteroid : MonoBehaviour
     IEnumerator WaveTextShower()
     {
         waveText.text = "Wave " + waveCount; // Update wave text
-        yield return new WaitForSecondsRealtime(waveDelay / 2);
+        yield return new WaitForSecondsRealtime(waveDelay / 3);
         waveText.gameObject.SetActive(true);
         StartCoroutine(AnimateFontSize()); // Start the font size animation for the wave text
-        yield return new WaitForSecondsRealtime(waveDelay / 2);
+        yield return new WaitForSecondsRealtime(2 * waveDelay / 3);
         waveText.gameObject.SetActive(false);
     }
 
